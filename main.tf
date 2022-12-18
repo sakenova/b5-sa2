@@ -14,6 +14,11 @@ resource "yandex_vpc_subnet" "sfsubnet-b" { //ПОДСЕТЬ B
   network_id     = yandex_vpc_network.sfnet1.id
 }
 
+module "bucket" {
+  source = "./modules/bucket"
+
+}
+
 resource "yandex_compute_instance" "vm3" {
   name = "vm3"
   zone = "ru-central1-a"

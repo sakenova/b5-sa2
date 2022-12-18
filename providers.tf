@@ -6,20 +6,19 @@ terraform {
       version = "0.83.0"
     }
   }
-  /* #переносим файл в созданное хранилище
-  backend "s3" {
+  #переносим файл в созданное хранилище
+ /* backend "s3" {
     endpoint                    = "storage.yandexcloud.net"
-    bucket                      = "b5-sa-1"
+    bucket                      = "b5-sa2_bucket"
     region                      = "ru-central1-a"
-    key                         = "./b5-sa.tfstate"
-    access_key                  = "YCAJE8b-xu5_tqJu1EXiuLSLJ"
-    secret_key                  = "YCNd-OD7NtBdp4r-IB31llO0gzLQGjZAOxgRI1R8"
+    key                         = "./b5-sa2.tfstate"
+    access_key                  = "sa2-access-key"
+    secret_key                  = "sa2-secret-key"
     skip_region_validation      = true
     skip_credentials_validation = true
-  }
+  } */
 }
-*/
-}
+
 //Установить провайдер YC
 provider "yandex" {
   token     = var.token
