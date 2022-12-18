@@ -6,14 +6,14 @@ terraform {
     }
   }
   //--------------------------------------config----------------------------------------------
-  /*
-  backend "s3" {
+
+  /*backend "s3" {
     endpoint                    = "storage.yandexcloud.net"
     bucket                      = "b5-sa2-bucket"
     region                      = "ru-central1-a"
     key                         = "./b5-sa2.tfstate"
-    access_key                  = local.sa2-bucket-access-key
-    secret_key                  = local.sa2-bucket-secret_key
+    access_key                  = "YCAJE162IRGy_QUgHOvf33WYc"
+    secret_key                  = "YCM6SZfY3SDL5mF25ZVZKAxmOobeZy6glw6pg467"
     skip_region_validation      = true
     skip_credentials_validation = true
   }
@@ -43,25 +43,26 @@ resource "yandex_iam_service_account_static_access_key" "sa2-static-key" { // С
   service_account_id = yandex_iam_service_account.sa2.id
   description        = "static access key for object storage"
 }
+/*
 output "sa2-access" {
   value = yandex_iam_service_account_static_access_key.sa2-static-key.access_key
 }
 output "sa2-secret" {
   value = nonsensitive(yandex_iam_service_account_static_access_key.sa2-static-key.secret_key)
 }
-/*
+
 locals {
   sa2-bucket-acces-key  = yandex_iam_service_account_static_access_key.sa2-static-key.access_key
   sa2-bucket-secret-key = yandex_iam_service_account_static_access_key.sa2-static-key.secret_key
 }
-
+*/
 //-----------------------------------------Создать бакет-------------------------------------
 resource "yandex_storage_bucket" "bucket2" {
-  access_key = local.sa2-bucket-access-key
-  secret_key = local.sa2-bucket-secret-key
+  access_key = "YCAJE162IRGy_QUgHOvf33WYc"
+  secret_key = "YCM6SZfY3SDL5mF25ZVZKAxmOobeZy6glw6pg467"
   bucket     = "b5-sa2-bucket"
 }
-*/
+
 //----------------------------СЕТЬ-------------------------------------
 resource "yandex_vpc_network" "sfnet1" {
   name = "sfnet1"
