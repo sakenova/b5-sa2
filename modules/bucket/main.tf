@@ -21,5 +21,5 @@ resource "yandex_iam_service_account_static_access_key" "sa2-static-key" {
 resource "yandex_storage_bucket" "bucket2" {
   access_key = yandex_iam_service_account_static_access_key.sa2-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa2-static-key.secret_key
-  bucket = "b5-sa2_bucket"
+  bucket = "b5-sa2-bucket"
 }
