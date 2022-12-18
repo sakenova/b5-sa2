@@ -7,7 +7,7 @@ terraform {
   }
   //--------------------------------------config----------------------------------------------
 
-  /*backend "s3" {
+  backend "s3" {
     endpoint                    = "storage.yandexcloud.net"
     bucket                      = "b5-sa2-bucket"
     region                      = "ru-central1-a"
@@ -17,7 +17,7 @@ terraform {
     skip_region_validation      = true
     skip_credentials_validation = true
   }
-*/
+
 }
 
 provider "yandex" { //Установить провайдер YC
